@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto_evalu2.16</title>
+</head>
+    <body>
+        <button><a href="/HTML5/index.html">regresar al menu</a></button>
+        <h1>Califica tu visita al campus </h1>
+        <form action="http://www.deitel.com" method="post">
+            <div class="grupo_de_elementos">
+                <label for="Name">Nombre</label>
+                <input type="text" id="Name" name="Name" placeholder="Nombre completo" pattern="[A-Z\sa-z]{3,20}" required>
+            </div>
+
+            <div>
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" placeholder="Correo Electrónico" required>
+            </div>
+
+            <div class="checkbox">
+                <p>¿Qué fue lo que más te gustó?</p>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Campus</label><br>
+                <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Estudiantes</label>
+                <label><input type="checkbox" id="cbox3" value="third_checkbox"> Ubicación</label><br>
+                <input type="checkbox" id="cbox4" value="fourth_checkbox"> <label for="cbox4">Ambiente</label>
+                <label><input type="checkbox" id="cbox5" value="fifth_checkbox"> Dormitorio</label><br>
+            </div>
+            <div class="seleccion">
+                <label for="sleccion">¿Cómo supo se entero de la universidad? </label>
+                <select name="entardo" id="selection" required>
+                    <option value="friends">Amigos</option>
+                    <option value="tv">Televisi&oacute;n</option>
+                    <option value="Internet">Internet</option>
+                    <option value="">Otro</option>
+                </select>
+            <div>
+                
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tus comentarios" required></textarea>  
+            </div>    
+
+            <button type="submit">Enviar Mensaje</button>
+
+            </div>
+            
+        </form>
+    </body>
+</html>

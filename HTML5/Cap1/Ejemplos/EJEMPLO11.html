@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--Fig 2.13: Tabla2.html-->
+<!--Tabla de HTML5 completa-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <button><a href="/HTML5/index.html">regresar al menu</a></button>
+    <h1>Ejemplo de tabla: combinado de filas y columnas</h1>
+    <table border="1">
+        <caption>Una tabla de muestra m&aacute;s compleja</caption>
+        <thead>
+            <!---los elementos rowspan colspan combinan el numero-->
+            <!---especificado de celdas en sentido vertical u horizontal-->
+            <tr>
+                <!--combina dos filas-->
+                <th rowspan="2">
+                    <img src="camello.png" width="205"
+                        height="167" alt="Imagen de un camello con una joroba">
+                </th>
+
+                <!--combina cuatro columnas-->
+                <th colspan="4">
+                    <strong>comparaci&oacute;n de cam&eacute;lidios</strong><br>
+                    Fecha aproximada: 10/2011
+                </th>
+            </tr>
+            <tr>
+                <th># Jorobas</th>
+                <th>Regi&oacute;n ind&iacute;gena</th>
+                <th>Escupe?</th>
+                <th>Produce lana?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Camellos (bactrianos)</th>
+                <td>2</td>
+                <td>Africa/Asia</td>
+                <td>S&iacute;</td>
+                <td>S&iacute;</td>
+            </tr>
+            <tr>
+                <th>Llamas</th>
+                <td>1</td>
+                <td>Monta&ntilde;as de los Andes</td>
+                <td>S&iacute;</td>
+                <td>S&iacute;</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
