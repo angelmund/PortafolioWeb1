@@ -1,0 +1,43 @@
+:root { /*aquí definimos una paleta de colores */
+    --blanco: #FFFFFF;
+    --SECUNDARIO: #0097a7;
+}
+
+img{
+    max-width: auto;
+    max-height: 100%;
+    align-content: center;
+}
+.logo{
+    height: 200px;
+    margin-left: 20rem;
+   
+}
+
+#tex{
+    margin-top: 10rem;
+    background-color: white;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+
+
+
+.button{
+    color: white;
+    background: #06526e;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 34px;
+    margin: 5px;
+    height: 15px;
+    width: 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    justify-content: center;
+}
