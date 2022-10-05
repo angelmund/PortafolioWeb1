@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Ejercicio 5.10-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJERCICIO DE AUTOEVALUACION 5.10</title>
+        <title>Inclinar (skew)</title>
+        <style type="text/css">
+            .skew .textbox{
+                margin-left: 75px;
+                background: lightgreen;
+                height: 100px;
+                width: 200px;
+                padding: 25px 0;
+                text-align: center;
+                font-size: 250%;
+                border: 3px solid darkgreen;
+                border-radius: 15px;
+                -webkit-animation: skew 3s infinite linear;
+                -moz-animation: skew 3s infinite linear;
+                animation: skew 3s infinite linear;
+            }
+            @-webkit-keyframes skew{
+                from {-webkit-transform: skewY(0deg);}
+                25% {-webkit-transform: skewY(30deg);}
+                50% {-webkit-transform: skewX(0);}
+                75% {-webkit-transform: skewX(30deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+            @-moz-keyframes skew{
+                from {-webkit-transform: skewY(0deg);}
+                25% {-webkit-transform: skewY(30deg);}
+                50% {-webkit-transform: skewX(0);}
+                75% {-webkit-transform: skewX(30deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+            @-keyframes skew{
+                from {-webkit-transform: skewY(0deg);}
+                25% {-webkit-transform: skewY(30deg);}
+                50% {-webkit-transform: skewX(0);}
+                75% {-webkit-transform: skewX(30deg);}
+                to {-webkit-transform: skewX(0);}
+            }
+        </style>
+    </head>
+    <body>
+        <button><a href="/CSS/Contenido.html">Regresar</a></button>
+        <div class="box skew">
+            <div class="textbox">Incliar texto</div>
+        </div>
+    </body>
+</html>

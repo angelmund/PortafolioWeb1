@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Fig. 4.10: posicionamiento2.html  -->
+<!-- Posicionamiento relativo de los elementos  -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento relativo</title>
+    <style type="text/css">
+        p   {font-size: 1.3em;
+            font-family: verdana,Arial, Helvetica, sans-serif;}
+        span    {color: red;
+                font-size: .6em;
+                height: 1em;}
+        .super  {position: relative;
+                top: -1ex; }
+        .sub    {position: relative;
+                left: -1ex;}
+        .desplizq {position: relative;
+                    left: -1ex;}
+        .desplder   {position: relative;
+                    right: -1ex}
+    
+    </style>
+</head>
+    <body>
+        <button><a href="/CSS/Contenido.html">Regresar</a></button>
+        <p>El texto al final de esta oraci&oacute;n
+            <span class="super">est&aacute;: en sub&iacute;ndice</span>.</p>
+        <p>El texto al final de esta oraci&oacute;n 
+            <span class="sub">est&aacute;: desplazado a la izquierda</span></p>
+
+        <p>El texto de esta oraci&oacute;n 
+            <span class="desplizq">esta&aacute;: desplazado a la izquierda</span></p>
+        <p>El texto al final de esta oraci&oacute;n
+            <span class="desplder">est&aacute;: desplazado a la derecha</span>
+        </p>
+    </body>
+</html>

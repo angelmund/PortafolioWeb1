@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--- Fig 5.12 transiciones.html-->
+<!-- Transiciones en CSS3. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones</title>
+    <style type="text/css">
+        img
+        {
+            margin: 80px;
+            -webkit-transition: -webkit-transform 4s;
+            -moz-transition: -moz-transform 4s;
+            -o-transition: -o-transform 4s;
+            transition: transform 4s;
+        }
+        img:hover
+        {
+            -webkit-transform: rotate(360deg) scale(2, 2);
+            -moz-transform: rotate(360deg) scale(2, 2);
+            -o-transform: rotate(360deg) scale(2, 2);
+            transform: rotate(360deg) scale(2, 2);
+        }
+    </style>
+</head>
+    <body>
+        <button><a href="/CSS/Contenido.html">Regresar</a></button>
+        <img src="cpphtp.png"  width="76" height="100"  
+        alt="Portada del libro c++ How to Program">
+    </body>
+</html>

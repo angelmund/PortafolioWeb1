@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Ejercicio 5.13-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJERCICIO DE AUTOEVALUACION 5.13</title>
+        <link href="http://fonts.googleapis.com/css?family=Rosario"
+        rel="stylesheet" type="text/css">
+        <style type="text/css">
+            .flexbox{
+                width: 600px;
+                height: 420px;
+                display: -webkit-box;
+                display: box;
+                -webkit-box-orient: vertical;
+                box-orient: vertical;
+            }
+            .flexbox > div{
+                -webkit-transform: 1s ease-out;
+                transform: 1s ease-out;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                border: 2px solid black;
+                width: 120px;
+                margin: 10px -10px 10px 0px;
+                padding: 20px 20px 20px 20px;
+                box-shadow: 10px 10px 10px 10px dimgrey;
+            }
+            .flexbox > div:nth-child(1){background-color: lightgray;}
+            .flexbox > div:nth-child(2){background-color: lightgray;}
+            .flexbox > div:nth-child(3){background-color: lightgray;}
+            .flexbox > div:nth-child(4){background-color: lightgray;}
+
+            .flexbox > div:hover{
+                width: 200px; color: white; font-weight: bold;
+            }
+            .flexbox > div:nth-child(1):hover{background-color: royalblue;}
+            .flexbox > div:nth-child(2):hover{background-color: crimson;}
+            .flexbox > div:nth-child(3):hover{background-color: crimson;}
+            .flexbox > div:nth-child(4):hover{background-color: darkgreen;}
+            p {height: 250px; overflow: hidden; font-family: "Rosario";}
+        </style>
+    </head>
+    <body>
+        <button><a href="/CSS/Contenido.html">Regresar</a></button>
+        <div class="flexbox">
+            <div><img src="/CSS/Parte2Css/Ejemplos/GPP.png" alt="Icono de buena pr&aacute;ctica de programaci&oacute;n">
+                <p>Las buenas pr&aacute;cticas de progrmaci&oacute;n indican las t&eacute;cnicas que
+                le ayud&aacute;n a producir programas m&aacute;s claros,
+                comprensibles y f&aacute;ciles de mantener.</p></div>
+            <div><img src="/CSS/Parte2Css/Ejemplos/EPT.png" alt="Icono de tip para prevenir errores">
+            <p>Los tips para prevenir errores contienen sugerencias para exponer errores
+                y eliminarlos de sus programas; muchos describen aspectos de
+                progrmaci&oacute;n que evitan que los errores entren siquiera
+                a los programas.</p></div>
+            <div><img src="/CSS/Parte2Css/Ejemplos/CPE.png" alt="Icono de error com&uacute;n de programaci&oacute;n">
+            <p>Los errores comunes de programaci&oacute;n se&ntilde;alan los errores que comenten
+                los estudiantes confrecuencia. Estos errores comunes de prormaci&oacute;n reducen
+                la probabilidad de que usted cometa los mismos errores.</p></div>
+            <div><img src="/CSS/Parte2Css/Ejemplos/SEO.png" alt="Icono de observaci&oacute;n de ingenier&iacute;a 
+            de software"><p>Las observaciones
+                de ingenier&iacute;a de software resaltan los asuntos de arquitectuea y dise&ntilde;o
+                que afectan en la contrucci&oacute;n de sistemas de software,
+                en especial los sistemas de gran escala.</p></div>
+        </div>
+    </body>
+</html>

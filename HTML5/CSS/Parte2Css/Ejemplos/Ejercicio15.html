@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--- Fig 5.16 mdcf.html-->
+<!-- Módulo de diseño de caja flexible -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de diseño de caja flexible</title>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Rosario:wght@300&display=swap" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .flexbox
+        {
+            width: 600px;
+            height: 420px;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            box-orient: horizontal;
+        }
+        .flexbox > div
+        {
+            -webkit-transition: 1s ease-out;
+            transition: 1s ease-out;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+            width: 120px;
+            margin: 10px -10px 10px 0px;
+            padding: 20px 20px 20px 20px;
+            box-shadow: 10px 10px 10px dimgrey;
+        }
+        
+            .flexbox > div:nth-child(1){background-color: lightgrey;}
+            .flexbox > div:nth-child(2){background-color: lightgrey;}
+            .flexbox > div:nth-child(3){background-color: lightgrey;}
+            .flexbox > div:nth-child(4){background-color: lightgrey;}
+
+            .flexbox > div:hover{
+                width: 200px; color: white; font-weight: bold;}
+            .flexbox > div:nth-child(1):hover {background-color: royalblue;}
+            .flexbox > div:nth-child(2):hover {background-color: crimson;}
+            .flexbox > div:nth-child(3):hover {background-color: crimson;}
+            .flexbox > div:nth-child(4):hover {background-color: darkgreen;}
+            p {height: 250px; overflow: hidden; font-family: "Rosario";}
+        
+    </style>
+</head>
+    <body>
+        <button><a href="/CSS/Contenido.html">Regresar</a></button>
+        <div class="flexbox">
+            <div><img src="GPP.png" alt="Icono de buena pr&aacute;ctica de porgramaci&oacute;n ">
+            <p>La buenas pr&aacute;cticas de programaci&oacute;n indican las t&eacute;cnicas que 
+                le ayudar&aacute;n a producir programas m&aacute;s claro,
+                comprensibles y f&aacute;ciles de matener.</p></div>
+            <div><img src="EPT.png" alt="Icono de tip para prevenir errores">
+            <p>Los tips para previr errores contienen sugerencias para exponer errores
+                y eliminarlos de sus programas: muchos describen aspectos de 
+                progamaci&oacute;n que evitan que los errores entren siquier a los programas</p></div>
+            <div><img src="CPE.png" alt="Icono de error com&uacute;n de programaci&oacute;n ">
+            <p>Los erroes comunes de programaci&oacute;n se&ntilde;alan los errores que cometen
+                los estudiantes en frecuencia. Estos errores comunes de programaci&oacute;n reducen 
+                la probabilidad de que usted  cometa los mismos errores.</p></div>
+            <div><img src="SEO.png" alt="Icono de observaci&oacute;n de ingenir&iacute;a de software ">
+            <p>Las observaciones 
+                de ingenier&iacute;a de sofware resaltan los asuntos de arquitectura y dise&ntilde;o 
+                que afectan en la construcci&oacute;n de sistemas de sofware,
+                en especial los sistemas de gran escala.</p></div>
+            </div>
+    </body>
+</html>
