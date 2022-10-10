@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--Fig. 6.14: Suma.html-->
+<!-- uso de operadores de igualdad y relacionales  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de operadores  relacionales</title>
+    <script>
+        var nombre; //cadenda introducida por el usuario
+        var ahora = new Date(); //fecha y hora actuales
+        var hora = ahora.getHours(); //hora actual (0-23)
+
+    //lee el nombre del cuadro indicador como una cadena
+    nombre = window.prompt("Escribe su nombre"); 
+    
+    //determina si es de mañana
+    if (hora<12)
+        document.write("<h1> Buenos d&iacute;as,"  );
+    //detenrina si la hora es PM
+    if (hora >=12)
+    {
+        //convierte a reloj de 12 horas
+        hora = hora -12;
+
+        //determina si es antes de las 6 PM
+        if ( hora>= 6)
+            document.write("<h1> Buenas noches, ");               
+    } //end if
+
+    document.writeln( nombre + ", bienvenido a la programaci&oacute;n en JavaScript </h1>");
+
+    </script>
+</head>
+    <body>
+        
+    </body>
+</html>
