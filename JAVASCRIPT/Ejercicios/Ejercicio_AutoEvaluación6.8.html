@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_AutoEvaluación6.8</title>
+    <script>
+        window.prompt("Escriba dos números:","0")
+        var a = pro;
+        var b = 12;
+        var c = 2;
+        pro = b*c;
+        function algoritmo()
+{
+    let n;
+    let guerra, nomina, pensiones, salario_minimo, salud;
+    let seguridad, sueldo_devengado;
+    let nombre = document.formulario1.nombre1.value;
+    salario_minimo = parseFloat (document.formulario1.salario_minimo.value);
+    sueldo_devengado = parseFloat (document.formulario1.sueldo_devengado.value);
+    salud=0;
+    pensiones=0;
+    seguridad=0;
+    guerra=0;
+    if(sueldo_devengado<=salario_minimo*3)
+    {
+        salud=sueldo_devengado*0.05;
+        pensiones=sueldo_devengado*0.118;
+        seguridad=sueldo_devengado*0.03;
+    }
+    if(sueldo_devengado>salario_minimo*4&&sueldo_devengado<salario_minimo*8)
+    {
+        salud=sueldo_devengado*0.1;
+        pensiones=sueldo_devengado*0.15;
+        seguridad=sueldo_devengado*0.05;
+    }
+    if(sueldo_devengado>salario_minimo*8&&salario_minimo<=salario_minimo*20)
+    {
+        salud=sueldo_devengado*0.2;
+        pensiones=sueldo_devengado*0.13;
+        seguridad=sueldo_devengado*0.1;
+        guerra=sueldo_devengado*0.05;
+    }
+    nomina=sueldo_devengado-salud-pensiones-seguridad-guerra;
+    document.formulario1.nombre2.value = nombre;
+    document.formulario1.guerra.value = guerra;
+    document.formulario1.nomina.value = nomina;
+    document.formulario1.pensiones.value = pensiones;
+    document.formulario1.salud.value = salud;
+    document.formulario1.seguridad.value = seguridad;
+}
+
+    </script>
+</head>
+    <body>
+        <h1>Escriba instrucciones de JavaScript que realicen cada una de las siguientes tareas:</h1>
+            
+            <ul>
+                <li>a) Muestre el mensaje “Escriba dos números" usando el objeto window.</li>
+                <li>  b) Asigne el producto de la variables b y c a la variable a.</li>
+                <li>c) indque que una secuencia de comandos va a realizar un cálculo de nómina de ejemplo.</li>
+            </ul>
+            
+          
+          
+    </body>
+</html>
