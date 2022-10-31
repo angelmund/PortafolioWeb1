@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- Fig. 8.12: PruebaContinue.html  -->
+<!-- Uso de la instrucción continue en una instrucción for.   -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de la instrucci&oacute;n break en una instrucci&oacute;n for</title>
+    <script>
+        for (var cuenta = 1; cuenta <=10; ++cuenta)
+        {
+            if (cuenta == 5)
+                continue; //omite el resto del código del cliclo sóli si cuenta ==5
+            document.writeln(cuenta + " ")
+        }//fin de for
+
+        document.writeln("<p> Se us&oacute; continue para no imprimr el 5 </p>");
+    </script>
+</head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+    </body>
+</html>
