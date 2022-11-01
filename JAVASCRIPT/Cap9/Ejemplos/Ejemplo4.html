@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Fig. 9.5: TirarDados.html.-->
+<!-- Generación de imágenes aleatorias de dados usando Math.random.  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Im&aacute;genes aleatorias de dados</title>
+    <style type="text/css">
+        li {display: inline; margin-right: 10px;}
+        ul {margin: 0;}
+    </style>
+    <script>
+        //variables utilizadas para interactuar con los elementos img
+        var imagenDado1;
+        var imagenDado2;
+        var imagenDado3;
+        var imagenDado4;
+
+        //registrar componente de escucga del botón y obtener los elementos img
+        function iniciar()
+        {
+            var boton = document.getElementById("botonTirar");
+            boton.addEventListener("click", tirarDados, false);
+            imagenDado1 = document.getElementById("dado1");
+            imagenDado2 = document.getElementById("dado2");
+            imagenDado3 = document.getElementById("dado3");
+            imagenDado4 = document.getElementById("dado4");
+        }//fin de la funcion iniciar
+        window.addEventListener("load", iniciar, false);
+
+    </script>
+</head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+
+        <form action="#">
+            <input id="botonTirar" type="button" value="Tirar daddos">
+        </form>
+        <ol>
+            <li><img src="dado1" src="blanco.png" alt="Imagen en blanco"></li>
+            <li><img src="dado2" src="blanco.png" alt="Imagen en blanco"></li>
+            <li><img src="dado3" src="blanco.png" alt="Imagen en blanco"></li>
+            <li><img src="dado4" src="blanco.png" alt="Imagen en blanco"></li>
+        </ol>
+    </body>
+</html>
