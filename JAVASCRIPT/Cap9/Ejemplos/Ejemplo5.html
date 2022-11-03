@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--- Fig.9.6 TiraraDados.html   -->
+<!-- Tirara 12 dados mostrar las frecuencias -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frecuencia al tirara los dados</title>
+    <style type="text/css">
+        img {margin-right: 10px;}
+        table { width: 20px;
+            border-collapse: collapse;
+            background-color: lightblue;}
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+    </style>
+    <script>
+        var fruencia1 = 0;
+        var fruencia2 = 0;
+        var fruencia3 = 0;
+        var fruencia4 = 0;
+        var fruencia5 = 0;
+        var fruencia6 = 0;
+        var totalDados = 0;
+
+        //registara el manejador de eventos del boton
+        function iniciar()
+        {
+            var boton = document.getElementById("botoTirar");
+            boton.addEventListener("click", tiraraDados,false);
+        }//fin de la función iniciar
+        
+        
+        
+        function tiraraDados()
+        {
+            var cara; //cara que se tiró
+            
+            //iterar para tirara el dado 12 veces 
+            for(var i =1; i<=12; ++i)
+            {
+                cara = Math.floor(1 + Math.random() *6);
+                SumarTiros(cara); //incrementa un contador de frecuncia
+                establecerImagen( i, cara); //mostar a imagen del dado apropiado
+                ++totalDados; //incremeneta el total
+            }//fin del ciclo de tirar dados
+            actualiarTablaFrecuencias();
+        }
+        //incremnetar el contador de frecuencias apropiado
+        function SumarTiros(cara)
+        {
+            switch(cara)
+            {
+                case 1:
+                    ++fruencia1;
+                    break;
+                case 2:
+                    ++fruencia2;
+                    break;
+            }
+        }
+    </script>
+</head>
+    <body>
+        
+    </body>
+</html>
