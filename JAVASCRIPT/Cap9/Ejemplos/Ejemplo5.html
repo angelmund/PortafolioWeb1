@@ -95,13 +95,29 @@
                     "<tr><td>2</td><td>"+frecuencia2 + "</td><td>"+
                     formatoPorcentaje(frecuencia2 / totalDados ) +"</td></tr>"+
                     "<tr><td>3</td><td>" + frecuencia3  + "</td><td>" +
-                    formatoPorcentaje(frecuencia3 / totalDados) + "</td></tr>"
-                    
-            }
+                    formatoPorcentaje(frecuencia3 / totalDados) + "</td></tr>" +
+                    "<tr><td>4</td><td>" + frecuencia4 + "</td><td>" +
+                    formatoPorcentaje(frecuencia4 / totalDados) + "</td></tr>" +
+                    "<tr><td>5</td><td>" + frecuencia5 + "</td><td>" +
+                    formatoPorcentaje(frecuencia5 / totalDados) + "</td></tr>" +
+                    "<tr><td>6</td><td>" + frecuencia6 + "</td><td>" +
+                    formatoPorcentaje(frecuencia6 / totalDados) + "</td></tr>" + 
+                    "</tbody></table>";
+            }//fin de la fncion actualizarTablaFrecuencias
+
+            //aplicar formato al porcetaje
+            function formatoPorcentaje(valor)
+            {
+                valor *=100;
+                return valor.toFixed(2);
+            }// fin de  la funcion formatoPorcentaje
+            window.addEventListener("load", iniciar,false);
         }
     </script>
 </head>
     <body>
-        
+       <p><img id="dado1" src="" alt="">
+
+       </p> 
     </body>
 </html>
