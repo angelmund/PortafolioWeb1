@@ -74,6 +74,7 @@
                     ++frecuencia6;
                     break;
             }//fin de switch
+        }
             //establecerr origen de la imagen para un dado
             function establecerImagen()
             {
@@ -112,12 +113,28 @@
                 return valor.toFixed(2);
             }// fin de  la funcion formatoPorcentaje
             window.addEventListener("load", iniciar,false);
-        }
+       
     </script>
 </head>
     <body>
-       <p><img id="dado1" src="" alt="">
-
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+       <p><img id="dado6" src="/JAVASCRIPT/Cap9/dado6.png" alt="Imagen de dado 6 ">
+          <img id="dado2" src="/JAVASCRIPT/Cap9/dado2.png" alt="Imagen de dado 2 ">
+          <img id="dado3" src="/JAVASCRIPT/Cap9/dado3.png" alt="Imagen de dado 3 ">
+          <img id="dado2" src="/JAVASCRIPT/Cap9/dado2.png" alt="Imagen de dado 2 ">
+          <img id="dado3" src="/JAVASCRIPT/Cap9/dado3.png" alt="Imagen de dado 3 ">
+          <img id="dado5" src="/JAVASCRIPT/Cap9/dado5.png" alt="Imagen de dado 5 ">
        </p> 
+       <p>
+        <img id="dado2" src="/JAVASCRIPT/Cap9/dado2.png" alt="Imagen de dado 2 ">
+        <img id="dado1" src="/JAVASCRIPT/Cap9/dado1.png" alt="Imagen de dado 1 ">
+        <img id="dado3" src="/JAVASCRIPT/Cap9/dado3.png" alt="Imagen de dado 3 ">
+        <img id="dado1" src="/JAVASCRIPT/Cap9/dado1.png" alt="Imagen de dado 1 ">
+        <img id="dado1" src="/JAVASCRIPT/Cap9/dado1.png" alt="Imagen de dado 1 ">
+        </p>
+        <form action="#">
+            <input id="botonTirar" type="button" value="Tirar dados">
+        </form>
+        <div id="divTablaFrecuencias"></div>
     </body>
 </html>
