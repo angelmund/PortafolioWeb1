@@ -19,12 +19,12 @@
         }
     </style>
     <script>
-        var fruencia1 = 0;
-        var fruencia2 = 0;
-        var fruencia3 = 0;
-        var fruencia4 = 0;
-        var fruencia5 = 0;
-        var fruencia6 = 0;
+        var frecuencia1 = 0;
+        var frecuencia2 = 0;
+        var frecuencia3 = 0;
+        var frecuencia4 = 0;
+        var frecuencia5 = 0;
+        var frecuencia6 = 0;
         var totalDados = 0;
 
         //registara el manejador de eventos del boton
@@ -56,11 +56,47 @@
             switch(cara)
             {
                 case 1:
-                    ++fruencia1;
+                    ++frecuencia1;
                     break;
                 case 2:
-                    ++fruencia2;
+                    ++frecuencia2;
                     break;
+                case 3:
+                    ++frecuencia3;
+                    break;
+                case 4:
+                    ++frecuencia4;
+                    break;
+                case 5:
+                    ++frecuencia5;
+                    break;
+                case 6:
+                    ++frecuencia6;
+                    break;
+            }//fin de switch
+            //establecerr origen de la imagen para un dado
+            function establecerImagen()
+            {
+                var imgDado = document.getElementById("dado" + numeroDado);
+                imgDado.setAttribute("src", "dado" + cara + ".png");
+                imgDado.setAttribute("alt", "dado con " + cara + "punto(s)");
+            }//fin de la funcion establecer imagen 
+
+            //actualizar tabla de frecuencias en la pagina 
+            function actualiarTablaFrecuencias()
+            {
+                var divTabla = document.getElementById("divTablaFrecuencias");
+                divTabla.innerHTML = "<table>" + 
+                    "<caption>Frecuencia de tiro de los dados</caption>"+
+                    "<thead><th>Cara</th><th>Frecuencia</th>" +
+                    "<th>Porcentaje</th></thead>" +
+                    "<tbody><tr><td>1</td><td>" + frecuencia1 + "</td><td>"+
+                    formatoPorcentaje(frecuencia1 / totalDados) + "</td></tr>" +
+                    "<tr><td>2</td><td>"+frecuencia2 + "</td><td>"+
+                    formatoPorcentaje(frecuencia2 / totalDados ) +"</td></tr>"+
+                    "<tr><td>3</td><td>" + frecuencia3  + "</td><td>" +
+                    formatoPorcentaje(frecuencia3 / totalDados) + "</td></tr>"
+                    
             }
         }
     </script>
