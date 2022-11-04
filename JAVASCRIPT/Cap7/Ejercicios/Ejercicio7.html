@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 6.22</title>
+        <script>
+            document.writeln("<button><a href='/menu.html'>regresar al menu</a></button><br>");
+            var val1, val2, num1, num2;
+
+            val1 = window.prompt("Escriba el primer entero");
+            val2 = window.prompt("Escriba el segundo entero");
+
+            num1 = parseInt(val1);
+            num2 = parseInt(val2);
+
+            if(num1 % num2 == 0){
+                document.writeln(num1 + " es multiplo de " + num2);
+            }else{
+                document.writeln("no son multiplos");
+            }
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button>
+    </body>
+</html>

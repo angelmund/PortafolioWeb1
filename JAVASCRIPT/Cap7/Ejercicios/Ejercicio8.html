@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 6.23</title>
+        <script>
+            document.writeln("<button><a href='/menu.html'>regresar al menu</a></button><br>");
+            var val1, val2, val3, num1, num2, num3, pos = 0, neg = 0, cero = 0;
+
+            val1 = window.prompt("Escriba el primer número");
+            val2 = window.prompt("Escriba el segundo número");
+            val3 = window.prompt("Escriba el tercer número");
+
+            num1 = parseInt(val1);
+            num2 = parseInt(val2);
+            num3 = parseInt(val3);
+
+            if(num1 < 0){
+                neg++;
+            }
+
+            if(num1 > 0){
+                pos++;
+            }
+
+            if(num1 == 0){
+                cero++;
+            }
+
+            if(num2 < 0){
+                neg++;
+            }
+
+            if(num2 > 0){
+                pos++;
+            }
+
+            if(num2 == 0){
+                cero++;
+            }
+
+            if(num3 < 0){
+                neg++;
+            }
+
+            if(num3 > 0){
+                pos++;
+            }
+
+            if(num3 == 0){
+                cero++;
+            }
+
+            document.writeln(
+                "<p><strong>Se introdugeron:</strong><br>" +
+                pos + "<strong> positivos</strong><br>" +
+                neg + "<strong> negativos</strong><br>" +
+                cero + "<strong> ceros</strong>"
+            );
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button>
+    </body>
+</html>

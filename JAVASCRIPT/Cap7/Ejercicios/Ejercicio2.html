@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 6.17</title>
+        <script>
+            document.writeln("<button><a href='/menu.html'>regresar al menu</a></button><br>");
+            var mayor, val1, val2, numero1, numero2;
+
+            val1 = window.prompt("Escriba el primer entero");
+            val2 = window.prompt("Escriba el segundo entero");
+
+            numero1 = parseInt(val1);
+            numero2 = parseInt(val2);
+
+            if(numero1 > numero2){
+                mayor = numero1;
+                window.alert(mayor + " es mayor que " + numero2);
+            }else if(numero1 == numero2){
+                window.alert("Estos números son iguales");
+            }else{
+                mayor = numero2;
+                window.alert(mayor + " es mayor que " + numero1);
+            }
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button>
+    </body>
+</html>

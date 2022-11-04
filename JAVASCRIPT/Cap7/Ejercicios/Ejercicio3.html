@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 6.18</title>
+        <script>
+            document.writeln("<button><a href='/menu.html'>regresar al menu</a></button><br>");
+            var val1, val2, val3, num1, num2, num3, suma, prom, prod, menor, mayor;
+
+            val1 = window.prompt("Escriba el primer entero");
+            val2 = window.prompt("Escriba el segundo entero");
+            val3 = window.prompt("Escriba el tercer entero");
+
+            num1 = parseInt(val1);
+            num2 = parseInt(val2);
+            num3 = parseInt(val3);
+
+            suma = num1 + num2 + num3;
+            prom = suma / 3;
+            prod = num1 * num2 * num3;
+
+            //num1 mayor que num2 y num3
+            if(num1 > num2 && num1 > num3){
+                mayor = num1;
+
+                /*si num1 es mayor, se verifica si es num2 es menor que num3
+                para determinar el menor de los 3*/
+                if(num2 < num3){
+                    menor = num2;
+                }else{
+                    menor = num3;
+                }
+            //num2 mayor que num1 y num3
+            }else if(num2 > num1 && num2 > num3){
+                mayor = num2;
+                if(num1 < num3){
+                    menor = num1;
+                }else{
+                    menor = num3;
+                }
+            //num3 mayor que num1 y num2
+            }else if(num3 > num1 && num3 > num2){
+                mayor = num3;
+                if(num1 < num2){
+                    menor = num1;
+                }else{
+                    menor = num2;
+                }
+            }
+
+            window.alert(
+                "suma: " + suma +
+                "\npromedio: " + prom +
+                "\nproducto: " + prod +
+                "\nmenor: " + menor + 
+                "\nmayor: " + mayor
+            );
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button>
+    </body>
+</html>

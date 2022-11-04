@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 </title>
-</head>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 6.16</title>
+        <script>
+            document.writeln("<button><a href='/menu.html'>regresar al menu</a></button><br>");
+            var numero1, numero2, suma, prod, dif, cociente, val1, val2;
+
+            val1 = window.prompt("Escriba el primer entero:");
+            val2 = window.prompt("Escriba el segundo entero:");
+
+            numero1 = parseInt(val1);
+            numero2 = parseInt(val2);
+
+            suma = numero1 + numero2;
+            producto = numero1 * numero2;
+            dif = numero1 - numero2;
+            cociente = numero1 % numero2;
+
+            document.writeln(
+                "<p><strong>La suma es </strong>" + suma +"</p>" +
+                "\n<p><strong>El producto es </strong>" + producto +"</p>" +
+                "\n<p><strong>La diferencia es </strong>" + dif +"</p>" +
+                "\n<p><strong>El cociente es </strong>" + cociente +"</p>"
+            );
+        </script>
+    </head>
     <body>
         <button><a href="/JAVASCRIPT/index.html">Volver</a></button>
-        <ol type="a">
-            <li>Todas las secuencias de comandos pueden escribirse en términos de tres tipos de estructuras de control:</li>
-            <B><FONT color="blue"></FONT></B>
-        </ol>
-           
-       
     </body>
 </html>
