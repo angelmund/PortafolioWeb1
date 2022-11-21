@@ -3,8 +3,8 @@
 
 function botonDividirPresionado()
 {
-    var cadenaEntrada = document.getElementById("campoEntrada").Value;
-    var tokens = cadenaEntrada.split("");
+    var cadenaEntrada = document.getElementById("campoEntrada").Value  ;
+    var tokens = cadenaEntrada.split(" ");
 
     var resultados = document.getElementById("resultados");
 
