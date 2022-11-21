@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- Fig. 11.17: BusquedasFavoritasTwitter.html-->
+<!-- Aplición Web de Búsquedas favoritas de Twitter. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&uacute;squedas de Twitter</title>
+    <link rel="stylesheet" type="text/css" href="estilos1.css">
+    <script src="BusquedasFavoritasTwitter.js"></script>
+</head>
+<body>
+    <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+    <h1>B&uacute;squedas favoritas de Twitter</h1>
+    <p id="mensajeBienvenida"></p>
+    <form action="#">
+        <p><input id="consulta" type="text" placeholder="Introduzca la consulta de b&uacute;squeda de Twitter">
+        <a href="https://dev.twitter.com/docs/using-search">
+            Operadores de b&uacute;squeda de Twitter</a></p>
+        <p><input id="etiqueta" type="text" placeholder="Etiquete su consulta"> 
+            <input type="button" value="Guardar"
+                id="botonGuardar">
+            <input type="button" value="Borrar todas las b&uacute;squedas guardadas"
+                id="botonBorrar"></p>
+    </form>
+    <h1>B&uacute;squedas etiquetadas previamente</h1>
+    <div id="busquedas"></div>
+</body>
+</html>
