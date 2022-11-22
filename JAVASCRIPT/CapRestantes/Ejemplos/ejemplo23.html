@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- Fig. 13.8: focusblur.html -->
+<!-- Demostración de los eventos focus y blur. -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Un formulario que utiliza focus y blur</title>
+        <link rel="stylesheet" href="/JAVASCRIPT/CapRestantes/Ejemplos/estilo138.css" type="text/css">
+        <script src="/JAVASCRIPT/CapRestantes/Ejemplos/focusblur.js"></script>
+    </head>
+    <body>
+       <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <form action="#" id="miFormulario">
+            <p>
+                <label for="nombre" class="fixed">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Escriba su nombre">
+            </p>
+            <p>
+                <label for="email" class="fixed">E-mail:</label>
+                <input type="email" id="email" placeholder="Escriba su e-mail">
+            </p>
+            <p>
+                <label>Haga click aquí si le gusta este sitio
+                    <input type="checkbox" id="gusta">
+                </label>
+            </p>
+            <p>
+                <label for="comentarios">¿Comentarios?</label>
+            </p>
+            <textarea id="comentarios" placeholder="Escriba aquí sus comentarios"></textarea>
+            <p>
+                <input type="submit" value="Enviar" id="enviar">
+                <input type="reset" value="Reiniciar" id="reiniciar">
+            </p>
+        </form>
+        <p id="textoAyuda"></p>
+    </body>
+</html>

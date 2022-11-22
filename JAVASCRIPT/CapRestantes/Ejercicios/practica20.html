@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 11.3</title>
+        <meta charset="UTF-8">
+        <script>
+
+            function iniciar(){
+                var boton = document.getElementById("enviar")
+                boton.addEventListener("click", funciones, false);
+            }
+
+            function funciones(){
+                var num = document.getElementById("numero").value;
+                var x = parseFloat(num);
+                var contenido = "Valor absoluto de " + x + " = " + Math.abs(x) + "\n";
+                contenido += "Rendondea " + x + " al entero más pequeño no menor de " + x + " = " + Math.ceil(x);;
+                contenido += "\nCoseno trigonométrico de " + x + " = " + Math.cos(x);
+                contenido += "\nMétodo exponencial ex de " + x + " = " + Math.exp(x);
+                contenido += "\nRedondea " + x + " al entero más grande no mayor de " + x + " = " + Math.floor(x);
+                contenido += "\nLogaritmo natural de " + x + " base (e) = " + Math.log(x);
+                document.getElementById("funciones").innerHTML = contenido;
+            }
+            
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que evalúe todas las funciones que pueda de la biblioteca Math 
+            de la figura 11.1. Para ejercitar cada una de estas funciones, haga que su programa muestr tablas 
+            de valores de retorno para varios valores de argumentos en un elemento textarea de HTML5</h3>
+
+        <form action="#">
+            <label>Ingresa un número:
+                <input type="number" id="numero">
+            </label>
+            <input type="button" value="Enviar" id="enviar">
+        </form>
+        <textarea name="funciones" id="funciones" cols="100" rows="13" disabled></textarea>
+    </body>
+</html>

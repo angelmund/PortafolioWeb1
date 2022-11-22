@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.16</title>
+        <meta charset="UTF-8">
+        <script>
+            function iniciar(){
+                var primos = new Array(1000);
+                for (var i = 0; i< primos.length; ++i){
+                    primos[i] = 1;
+                }
+
+                primos[0] = 0;
+                primos[1] = 0;
+
+                for (var i = 2; i < primos.length; ++i){
+                    if(primos[i] == 1){
+                        var c = i + 1;
+                        for (var j = c; j < primos.length; ++j){
+                            if( j % i == 0){
+                                primos[j] = 0;
+                            }
+                        }
+                    }
+                }
+
+                var contenido = "<p>";
+            
+            for (var i in primos){
+                if(primos[i] == 1){
+                    contenido += i + ", ";
+                }
+            }
+
+            contenido += "</p>";
+
+            document.getElementById("resultado").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Un número primo es cualquier entero mayor que 1, divisible sólo por sí mismo y por el número 
+            1. La Criba de Eratóstenes es un método para encontrar números primos. Opera de la siguiente manera: <br>
+            a) Cree un arreglo con todo los elementos inicializados en 1 (true). Los elementos del arreglo con 
+            índices primos permanecerán como 1. Cualquier otro elemento del arreglo eventualmente cambiará a 0. <br>
+            b) Establezca los primerosdos elementos en 0, ya que 0 y 1 no son primos. Empezando con el índice 2 
+            del arreglo, cada vez que encuentre un elemento del arreglo valor sea 1, itere a través del resto del 
+            arreglo y asigne cero a todo elemento cuyo índice sea múltiplo del índice del elemento que tiene el valor 
+            1. Para el índice 2 del arreglo, todos los elementos más alla del elemento 2 en el arreglo que sean 
+            múltiplos de 2 se establecerán a cero (los índices 4, 6, 8, 10, etcetera); asi sucesivamente</h3>
+        <hr>
+        <div id="resultado"></div>
+    </body>
+</html>

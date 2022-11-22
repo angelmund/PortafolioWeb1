@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.7</title>
+        <script>
+            var articulos = ["el", "un", "algun", "ningun"];
+            var sustantivo = ["niño", "niña", "perro", "ciudad", "auto"];
+            var verbos = ["manejo", "salto", "corrio", "camino", "omitio"];
+            var preposiciones = ["a", "desde", "encima de", "debajo de", "sobre"]
+
+            function iniciar(){
+                var boton = document.getElementById("botonIniciar");
+                boton.addEventListener("click", enunciados, false);
+            }
+
+            function enunciados(){
+                var contenido = "Habia una vez..."
+                for( var i = 0; i < 20; ++i){
+                    var a = Math.floor(Math.random() * articulos.length);
+                    var b = Math.floor(Math.random() * sustantivo.length);
+                    var c = Math.floor(Math.random() * verbos.length);
+                    var d = Math.floor(Math.random() * preposiciones.length);
+                    var e = Math.floor(Math.random() * articulos.length);
+                    var f = Math.floor(Math.random() * sustantivo.length);
+                    contenido += "\n" + mayuscula(articulos[a]) + " " + sustantivo[b] + " " + verbos[c] + " " + 
+                    preposiciones[d] + " " + articulos[e] + " " + sustantivo[f] + ".";
+                }
+                document.getElementById("historia").innerHTML = contenido + "\nFIN.";
+            }
+
+            function mayuscula( enun ){
+                var x = "";
+                for(var i = 0; i < enun.length; ++i){
+                    if(i == 0 ){
+                        x += enun.charAt(i).toUpperCase();
+                    } else{
+                        x += enun.charAt(i);
+                    }
+                }
+                return x;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que utilice la generación de números aleatorios para crear enunciados. 
+            Use cuatro arreglos de cadenas llamados articulo, sustantivo, verbo y preposicion. Para crear un 
+            enunciado seleccione una palabra al azar de cada arreglo en el siguiente orden: articulo, sustantivo, 
+            verbo, preposicion, articulo y sustantivo.
+        </h3>
+        <hr>
+        <p>
+            <input type="button" value="Iniciar" id="botonIniciar">
+        </p>
+        <textarea id="historia" cols="80" rows="20"></textarea>
+    </body>
+</html>

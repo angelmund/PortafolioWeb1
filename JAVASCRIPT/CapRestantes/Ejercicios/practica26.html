@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.9</title>
+        <script>
+            var contenido = "";
+            function iniciar(){
+                var boton = document.getElementById("botonCodificar");
+                boton.addEventListener("click", imprimirPalabraEnLatin, false);
+            }
+
+            function imprimirPalabraEnLatin(){
+                var cadena = document.getElementById("cadena").value;
+                var tokens = cadena.split(" ");
+                for(var i = 0; i < tokens.length; ++i){
+                    contenido += codificar(tokens[i]) + " ";
+                }
+                contenido += "\n";
+                document.getElementById("resultados").innerHTML = contenido;
+            }
+
+            function codificar( x ){
+                var y = "";
+                for(var i = 1; i < x.length; ++i){
+                    y += x.charAt(i);
+                }
+                y += x.charAt(0) + "ae";
+                return y;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que codifique frases en español a frases en latín cerdo. El latín 
+            cerdo es una forma de lenguaje codificado, que se utiliza con frecuencia por diversión. Existen muchas 
+            variaciones en los métodos utilizados para formar frases en latín cerdo. Por cuestiones de simpleza, 
+            utilice el siguiente algoritmo: <br>
+            Para formar una frase en latín cerdo a partir de una frase en español, divida la frase en palabras con 
+            el método split de String. Para traducir cada palabra en español a una palabra en latín cerdo, coloque 
+            la primera letra de la palabra en español al final de la palabra, y agregue las letras "ae". De esta 
+            forma, la palabra "salta" se convierte a "altasae", la palabra "el" se convierte en "leae" y la 
+            palabra "computadora" se convierte en "omputadoracae".
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Enunciado: 
+                    <input type="text" id="cadena">
+                </label>
+            </p>
+            <input type="button" value="Codificar" id="botonCodificar">
+        </form>
+        <br>
+        <textarea id="resultados" cols="100" rows="20"></textarea>
+    </body>
+</html>

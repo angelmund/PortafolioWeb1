@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.10</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonExtraer");
+                boton.addEventListener("click", extraer, false);
+            }
+
+            function extraer(){
+                var num = document.getElementById("telefono").value;
+                var tokens = num.split(")");
+                console.log(tokens[0] + ")");
+                document.getElementById("codigo").innerHTML = "Codigo: " + tokens[0] + ")";
+                var tokens2 = tokens[1].split("-");
+                console.log(tokens2[0]);
+                console.log(tokens2[1]);
+                document.getElementById("numero").innerHTML = "Número telefónico: " + tokens2[0] + "-" + tokens2[1];
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una aplicación que reciba como entrada un número telefónico como una cadena de la forma 
+            (555)555-5555. La aplicación deberá utilizar el método String split para extraer el código de área 
+            como un token, los primeros tres dígitos del número telefónico como otro token y los últimos cuatro 
+            dígitos del número telefónico como otro token. Muestre en pantalla el código de área en un campo de 
+            texto y el número telefónico de siete dígitos en otro campo de texto.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Número telefónico: 
+                    <input type="text" id="telefono">
+                </label>
+            </p>
+            <input type="button" value="Extraer" id="botonExtraer">
+        </form>
+        <p id="codigo"></p>
+        <p id="numero"></p>
+    </body>
+</html>

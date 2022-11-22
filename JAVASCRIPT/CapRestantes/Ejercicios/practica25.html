@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.8</title>
+        <script>
+            var quintillas = ["Beldad, como por despojo,", "van en copla a vos las vidas", 
+                            "que defiendo con enojo.", "Y ¿quién puede, sino un cojo,", "abogar por las caídas?", 
+                            "Hubo una selva y un nido","y en ese nido un jilguero","que alegre y estremecido,",
+                            "tras de un ensueño querido","cruzó por el mundo entero.","Cualquier prisión y dolor",
+                            "que se sufra es justa cosa,","pues se sufre por amor","de la mayor y mejor",
+                            "del mundo y la más hermosa"];
+
+            function iniciar(){
+                var boton = document.getElementById("botonIniciar");
+                boton.addEventListener("click", enunciados, false);
+            }
+
+            function enunciados(){
+                var contenido = "";
+                for(var i = 0; i < 5; ++i){
+                    var a = Math.floor(Math.random() * quintillas.length);
+                    contenido += "\n" + quintillas[a];
+                }
+                document.getElementById("historia").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+       <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Una quintilla es un verso humorístico de cinco líneas en el cual la primera y segunda linea riman con 
+            la quinta, y la tercera rima con la cuarta. Utilizando técnicas similares a las desarrolladas en el 
+            ejercicio 11.7, escriba una secuencia de comandos que produzca quintillas al azar.
+        </h3>
+        <hr>
+        <p>
+            <input type="button" value="Iniciar" id="botonIniciar">
+        </p>
+        <textarea id="historia" cols="80" rows="20"></textarea>
+    </body>
+</html>

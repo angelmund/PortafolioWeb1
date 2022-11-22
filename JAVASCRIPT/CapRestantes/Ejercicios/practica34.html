@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.17</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonConvertir");
+                boton.addEventListener("click", convertir, false);
+            }
+
+            function convertir(){
+                var codigo = parseInt(document.getElementById("codigo").value);
+                var contenido = "El carácter del codigo introducido es: " + String.fromCharCode(codigo);
+                document.getElementById("caracter").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que reciba como entrada un código entero para un carácter 
+            y muestre el carácter correspondiente.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Código entero:
+                    <input type="number" id="codigo">
+                </label>
+            </p>
+            <input type="button" value="Convertir" id="botonConvertir">
+        </form>
+        <p id="caracter"></p>
+    </body>
+</html>

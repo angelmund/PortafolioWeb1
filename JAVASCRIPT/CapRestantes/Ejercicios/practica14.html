@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.14</title>
+        <meta charset="UTF-8">
+        <script>
+            var caras = [ [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ], 
+                        [ 0, 0, 0, 0, 0, 0, 0 ]];
+
+            function iniciar(){
+                var boton = document.getElementById("botonTirar");
+                boton.addEventListener("click", tirarDados, false);
+            }
+
+            function tirarDados(){
+                for( var i = 0; i < 36000; ++i){
+                    var dado1 = parseInt(Math.floor(Math.random() * (6 - 1 + 1) + 1));
+                    var dado2 = parseInt(Math.floor(Math.random() * (6 - 1 + 1) + 1));
+                    console.log(dado1 + "" + dado2);
+                    caras[dado1][dado2] += 1;
+                }
+                imprimirResultado();
+            }
+
+            function imprimirResultado(){
+                var contenido = "<table border='1'><thead><th>Caras</th><th>0</th><th>1</th><th>2</th><th>3</th>" + 
+                    "<th>4</th><th>5</th><th>6</th></thead><tbody>";
+                for (var fila in caras){
+                    contenido += "<tr><td>" + fila + "</td>";
+                    for (var col in caras[fila]){
+                        contenido += "<td>" + caras[fila][col] + "</td>";
+                    }
+                    contenido += "</tr>"
+                }
+                contenido += "</tbody></table>";
+                document.getElementById("resultado").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos para simular el tiro de dos dados. La secuencia debe usar Math.random para tirar
+            el primer dado y usar esa función de nuevo para tirar el segundo dado. Después deberá calcularse la suma de los dos
+            valores. Use un arreglo bidimensional para calcular el número de veces que aparezca cada posible suma. Muestre los
+            resultados en una tabla de HTML5</h3>
+        <hr>
+        <div>
+            <form action="#">
+                <p>
+                    <input type="button" value="Tirar dados" id="botonTirar">
+                </p>
+            </form>
+            <p>Frecuencias:</p>
+            <div id="resultado"></div>
+        </div>
+    </body>
+</html>

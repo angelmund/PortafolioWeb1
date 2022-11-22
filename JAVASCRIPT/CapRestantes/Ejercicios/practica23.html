@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.6</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonComparar");
+                boton.addEventListener("click", comparar, false);
+            }
+
+            function comparar(){
+                var c1 = document.getElementById("cadena1").value;
+                var c2 = document.getElementById("cadena2").value;
+                if( c1 == c2){
+                    document.getElementById("resultado").innerHTML = "Las cadenas son iguales";
+                } else if(c1 < c2){
+                    document.getElementById("resultado").innerHTML = "La primera cadena es menor a la segunda";
+                } else{
+                    document.getElementById("resultado").innerHTML = "La primera cadena es mayor a la segunda";
+                }
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que use operadores relacionales y de igualdad para comprar dos 
+            objetos String introducidos por el usuario a través de un formulario de HTML5. Muestre si la primera 
+            cadena es menor, igual o mayor que la segunda.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Primera cadena:
+                    <input type="text" id="cadena1">
+                </label>
+                <label>Segunda cadena:
+                    <input type="text" id="cadena2">
+                </label>
+            </p>
+            <input type="button" value="Comparar" id="botonComparar">
+        </form>
+        <p id="resultado"></p>
+    </body>
+</html>

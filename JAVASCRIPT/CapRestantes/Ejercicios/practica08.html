@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.8</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            em{
+                color: blue;
+            }
+            #ind{
+                padding-left: 2em;
+            }
+            #ind2{
+                padding-left: 4em;
+            }
+        </style>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba instrucciones de JavaScript para realizar cada una de las siguientes tareas:</h3>
+        <p>
+            <strong>a) Mostrar el valor del s&eacute;ptimo elemento del arreglo f</strong><br>
+            <em>R: document.writeln(f[6]);</em>
+        </p>
+        <p>
+            <strong>b) inicializar cada uno de los cinco elementos del arreglo unidimensional g en 8</strong><br>
+            <em>var g = [8, 8, 8, 8, 8];</em>
+        </p>
+        <p>
+            <strong>c) Calcular el total de los elementos c, que contiene 100 elementos num&eacute;ricos</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < c.length; ++i){</em><br>
+            <em id="ind">total += g[i];</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>d) Copiar el arreglo a de 11 elementos en la primera porci&oacute;n del arreglo b, que contiene 34 elementos</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < a.length; ++i){</em><br>
+            <em id="ind">b.push(a[i]);</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>e) Determinar e imprimir el valos m&aacute;s peque&ntilde;o y el m&aacute;s grande contenido en el arreglo
+                w de 99 elementos de punto flotante</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < w.length; ++i){</em><br>
+            <em id="ind">if (w[i] > mayor){</em><br>
+            <em id="ind2">mayor = w[i];</em><br>
+            <em id="ind">}</em><br>
+            <em id="ind">if (w[i] < menor){</em><br>
+            <em id="ind2">menor = w[i];</em><br>
+            <em id="ind">}</em><br>
+            <em>}</em><br>
+            <em>document.writeln("El mayor es: " + mayor + "El menor es: " + menor);</em>
+            
+        </p>
+    </body>
+</html>

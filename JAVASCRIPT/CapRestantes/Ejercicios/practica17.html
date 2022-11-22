@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.17</title>
+        <meta charset="UTF-8">
+        <script>
+            var carreraT = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            var carreraL = [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];    
+            var tabla = "<table border='1'><thead><th>Concursante</th>";  
+            var posicionTor = 1; 
+            var posicionLie = 1; 
+            
+            function iniciar(){
+                for(var i = 1; i < carreraT.length; ++i){
+                    console.log(carreraL[i]);
+                    tabla += "<th>" + i + "</th>";
+                }
+
+                tabla += "</thead><tr><td>Tortuga</td>";
+
+                for ( var i = 1; i < carreraT.length;++i){
+                    if(carreraT[i] == 1){
+                        tabla += "<td>T</td>";
+                    }else{
+                        tabla += "<td>-</td>";
+                    }
+                }
+                
+                tabla +="</tr><tr><td>Liebre</td>"; 
+                for ( var i = 1; i < carreraL.length;++i){
+                    if(carreraL[i] == 1){
+                        tabla += "<td>L</td>";
+                    }else{
+                        tabla += "<td>-</td>";
+                    }
+                }
+                tabla += "</tr></tbody></table>";
+                var carre = document.getElementById("carrera");
+                carre.innerHTML = tabla;
+
+                var boton = document.getElementById("botonTic");
+                boton.addEventListener("click", tic, false);
+            }
+
+            function tic(){
+                tabla = "<table border='1'><thead><th>Concursante</th>";
+                for(var i = 1; i < carreraT.length; ++i){
+                    console.log(carreraL[i]);
+                    tabla += "<th>" + i + "</th>";
+                }
+
+                var t = Math.floor(1 + Math.random() * 10);
+                console.log(t);
+                posicionT(t);
+
+                var l = Math.floor(1 + Math.random() * 10);
+                console.log(l);
+                posicionL(l);
+
+                tabla += "</thead><tbody><tr><td>Tortuga</td>"
+                for ( var i = 1; i < carreraT.length;++i){
+                    if(carreraT[i] == 1){
+                        tabla += "<td>T</td>";
+                    }else if(carreraT[i] == 0){
+                        tabla += "<td>-</td>";
+                    }else if(carreraT[i] == 2){
+                        tabla += "<td>OUCH!!!</td>";
+                    }
+                }
+                
+                tabla +="</tr><tr><td>Liebre</td>"; 
+                for ( var i = 1; i < carreraL.length;++i){
+                    if(carreraL[i] == 1){
+                        tabla += "<td>L</td>";
+                    }else if(carreraL[i] == 0){
+                        tabla += "<td>-</td>";
+                    }else if(carreraL[i] == 2){
+                        tabla += "<td>OUCH!!!</td>"
+                    }
+                }
+                tabla += "</tr></tbody></table>";
+                var carre = document.getElementById("carrera");
+                carre.innerHTML = tabla;
+            }
+            
+            function posicionT( t ){
+                console.log(t);
+                switch(t){
+                    case 1: case 2: case 3: case 4: case 5:
+                        console.log("Paso pesado rápido");
+                        posicionTor += 3;
+                        if(posicionTor > 70){
+                            posicionTor = 70;
+                        }
+                        carreraT[posicionTor] = 1;
+                        verificar();
+                        break;
+                    case 6: case 7: 
+                        console.log("Resbalón");
+                        posicionTor -= 6;
+                        if(posicionTor < 0){
+                            posicionTor = 1;
+                        }
+                        carreraT[posicionTor] = 1;
+                        verificar();
+                        break
+                    case 8: case 9: case 10: 
+                        console.log("Paso pesado lento");
+                        posicionTor += 1;
+                        if(posicionTor > 70){
+                            posicionTor = 70;
+                        }
+                        carreraT[posicionTor] = 1;
+                        verificar();
+                        break;
+                    default: 
+                        console.log("ERROR")
+                        break;
+                }
+            }
+
+            function posicionL( l ){
+                switch(l){
+                    case 1: case 2: 
+                        console.log("Dormir");
+                        verificar();
+                        break;
+                    case 3: case 4: 
+                        console.log("Gran salto");
+                        posicionLie += 9;
+                        if(posicionLie > 70){
+                            posicionLie = 70;
+                        }
+                        carreraL[posicionLie] = 1;
+                        verificar();
+                        break
+                    case 5: 
+                        console.log("Gran resbalón");
+                        posicionLie -= 12;
+                        if(posicionLie < 0){
+                            posicionLie = 1;
+                        }
+                        carreraL[posicionLie] = 1;
+                        verificar();
+                        break;
+                    case 6: case 7: case 8: 
+                        console.log("Pequeño salto");
+                        posicionLie += 1;
+                        if(posicionLie > 70){
+                            posicionLie = 70;
+                        }
+                        carreraL[posicionLie] = 1;
+                        verificar();
+                        break;
+                    case 9: case 10: 
+                        console.log("Pequeño resbalon");
+                        posicionLie -= 2;
+                        if(posicionLie < 0){
+                            posicionLie = 1;
+                        }
+                        carreraL[posicionLie] = 1;
+                        verificar();
+                        break;
+                }
+            }
+
+            function verificar(){
+                if(posicionLie == posicionTor){
+                    carreraL[posicionLie] = 2;
+                    carreraT[posicionTor] = 2;
+                }else{
+                    if( posicionTor >= 70){
+                        document.getElementById("ganador").innerHTML = "LA TORTUGA GANA!!!  YAY!!!";
+                    } else if(posicionLie >= 70){
+                        document.getElementById("ganador").innerHTML = "La liebre gana. Que mal.";
+                    }
+                }
+                
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Nuestros competidores empezaránla carrera en la posición 1 de 70. Cada posición representa a una 
+            posible posición a lo largo del curso de la carrera. La línea de meta se encuentra en la posición 70. 
+            El primer competidor en llegar a la posición 70 o más allá recibirá una cubeta llena con zanahoria y 
+            lechuga fresca. El recorrido se abre paso hasta la cima de una resbalosa montaña, por lo que en 
+            ocasiones los competidores pierden terreno. <br>
+            Un reloj hace tictacuna vez por segundo. Con cada tic del reloj, su secuancia de comandos debe ajustar 
+            la posición de los animales de acuerdo con las reglas</h3>
+        
+        <img src="/JAVASCRIPT/CapRestantes/Ejercicios/secuencia1.png" alt="Secuencia de comandos 1">
+        <img src="/JAVASCRIPT/CapRestantes/Ejercicios/secuencia2.png" alt="Secuencia de comandos 2">
+        <hr>
+        <form action="#">
+             <input type="button" value="Tic del reloj" id="botonTic">
+        </form>
+        <br>
+        <div id="carrera"> </div> 
+        <p id="ganador"></p>
+    </body>
+</html>

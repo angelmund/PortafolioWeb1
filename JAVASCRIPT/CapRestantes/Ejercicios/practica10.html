@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.10</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            table{
+                width: 200px;
+                border-collapse: collapse;
+                background-color: lightblue;
+            }
+            th{
+                background-color: blue;
+                color: white;
+            }
+            table, td{
+                border: 1px solid black;
+                padding: 4px;
+                text-align: center;
+            }
+            tr.addrow{
+                background-color: white;
+            }
+        </style>
+        <script>
+            var empleados = new Array();
+            
+            function iniciar(){
+                var boton = document.getElementById("botonCalcular");
+                boton.addEventListener("click", calcular, false);
+            }
+
+            function calcular(){
+                var ventasB = document.getElementById("ventas").value;
+                var v = parseFloat(ventasB);
+
+                var salario = (v * 0.09) + 200;
+
+                if(empleados == null){
+                    empleados[0] = parseInt(salario);
+                }else{
+                    var indice = empleados.length;
+                    empleados[indice] = parseInt(salario);
+                }
+                imprimirRangos();
+            }
+
+            function imprimirRangos(){
+                var contenido = "";
+                var rango1 = 0, rango2 = 0, rango3 = 0, rango4 = 0, rango5 = 0, rango6 = 0, rango7 = 0,
+                    rango8 = 0, rango9 = 0;
+                for (var elemento in empleados){
+                    if(empleados[elemento] >= 200 && empleados[elemento] < 300 ){
+                        rango1++;
+                    }
+                    if(empleados[elemento] >= 300 && empleados[elemento] < 400 ){
+                        rango2++;
+                    }
+                    if(empleados[elemento] >= 400 && empleados[elemento] < 500 ){
+                        rango3++;
+                    }
+                    if(empleados[elemento] >= 500 && empleados[elemento] < 600 ){
+                        rango4++;
+                    }
+                    if(empleados[elemento] >= 600 && empleados[elemento] < 700 ){
+                        rango5++;
+                    }
+                    if(empleados[elemento] >= 700 && empleados[elemento] < 800 ){
+                        rango6++;
+                    }
+                    if(empleados[elemento] >= 800 && empleados[elemento] < 900 ){
+                        rango7++;
+                    }
+                    if(empleados[elemento] >= 900 && empleados[elemento] < 1000 ){
+                        rango8++;
+                    }
+                    if(empleados[elemento] >= 1000 ){
+                        rango9++;
+                    }
+                }
+                contenido += "<table><tbody><th>Rangos:</th><th>Vendedores</th>" + 
+                    "<tr><td>200-299: </td><td>" + rango1 +"</td></tr>" +
+                    "<tr><td>300-399: </td><td>" + rango2 +"</td></tr>" +
+                    "<tr><td>400-499: </td><td>" + rango3 + "</td></tr>" +
+                    "<tr><td>500-599: </td><td>" + rango4 + "</td></tr>" +
+                    "<tr><td>600-699: </td><td>" + rango5 + "</td></tr>" +
+                    "<tr><td>700-799: </td><td>" + rango6 + "</td></tr>" +
+                    "<tr><td>800-899: </td><td>" + rango7 + "</td></tr>" +
+                    "<tr><td>900-999: </td><td>" + rango8 + "</td></tr>" +
+                    "<tr><td>1000-más: </td><td>" + rango9 + "</td></tr>";
+
+                contenido += "</tbody></table>";
+                document.getElementById("resultados").innerHTML = contenido;
+            }
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Use un arreglo unidimensional para resolver el siguiente problema: una empresa paga a su personal de ventar con base
+            en comisiones. El personal de ventas recibe $200 por semana m&aacute;s el 9 por ciento de sus ventas brutas para esa
+            semana. Por ejemplo, un vendedor con ventas brutas de $5000 en una semana recibe $200 m&aacute;s el 9 porciento de 
+            $5000, o un total de $650. Escriba una secuencia de comandos (usando un arreglo de contadores) que obtenga las ventas
+            brutas para cada empleado por medio de un formulario de HTML5 y determine cu&aacute;ntos vendedores obtuvieron salarios
+            en cada uno de los siguientes rangos (suponga que el salario de cada vendedor se trunca a un monto entero):</h3>
+        <p>
+            <strong>a) $200 a 299</strong><br>
+            <strong>b) $300 a 399</strong><br>
+            <strong>c) $400 a 499</strong><br>
+            <strong>d) $500 a 599</strong><br>
+            <strong>e) $600 a 699</strong><br>
+            <strong>f) $700 a 799</strong><br>
+            <strong>g) $800 a 899</strong><br>
+            <strong>h) $900 a 999</strong><br>
+            <strong>i) $1000 y más</strong>
+        </p>
+        <hr>
+        <form action="#">
+            <p>Calcular Salarios</p>
+            <p>
+                <label>Ventas brutas del empleado: 
+                    <input type="number" id="ventas">
+                </label>
+            </p>
+            <input type="button" value="Calcular" id="botonCalcular">
+        </form><br>
+        <div id="resultados"></div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 11.2</title>
+        <meta charset="UTF-8">
+        <script>
+            function iniciar(){
+                var boton1 = document.getElementById("ahora");
+                boton1.addEventListener("click", ahora, false);
+
+                var boton2 = document.getElementById("ayer");
+                boton2.addEventListener("click", ayer, false);
+
+                var boton3 = document.getElementById("diez");
+                boton3.addEventListener("click", diez, false);
+
+                var boton4 = document.getElementById("semana");
+                boton4.addEventListener("click", semana, false);
+            }
+
+            function ahora(){
+                var actual = new Date()
+                window.alert("La fecha y hora actual es: " + actual.toLocaleString());
+            }
+
+            function ayer(){
+                var actual = new Date()
+                actual.setDate(actual.getDate() - 1);
+                window.alert("La fecha y hora actual es: " + actual.toLocaleString());
+            }
+
+            function diez(){
+                var actual = new Date()
+                actual.setFullYear(actual.getFullYear() - 10);
+                window.alert("La fecha y hora actual es: " + actual.toLocaleString());
+            }
+            
+            function semana(){
+                var actual = new Date()
+                actual.setDate(actual.getDate() + 7);
+                window.alert("La fecha y hora actual es: " + actual.toLocaleString());
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Cree un página Web que contenga cuatro botones. Al hacer clic en cada cotón, deberá aparecer un 
+            diálogo de alerta con una hora o fecha diferentes en relación con la hora actual. Cree un botón Ahora 
+            que alerte sobre la hora y fecha actuales, y un botón Ayer que alerte sobre la fecha y hora hace 24 
+            horas. Los otros dos botones deberán alertar sobre la fecha y hora hace diez años y una semana a partir 
+            de hoy</h3>
+        <div style="flex-direction: raw;">
+            <input type="button" value="Ahora" id="ahora">
+            <input type="button" value="Ayer" id="ayer">
+            <input type="button" value="Hace 10 años" id="diez">
+            <input type="button" value="En una semana" id="semana">
+        </div>
+    </body>
+</html>

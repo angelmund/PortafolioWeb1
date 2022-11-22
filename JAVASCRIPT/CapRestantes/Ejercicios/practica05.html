@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.5</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            em{
+                color: blue;
+            }
+            #ind{
+                padding-left: 2em;
+            }
+            #ind2{
+                padding-left: 4em;
+            }
+        </style>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Encuentre el o los errores en cada uno de los siguientes segmentos de programa y corrijalos</h3>
+        <p>
+            <strong>a</strong><br>
+            <strong>var b = new Array(10);</strong><br>
+            <strong>var longitud = b.length</strong><br>
+            <strong>for (var i = 0; i <= longitud; ++i)</strong><br>
+            <strong>{</strong><br>
+            <strong>b[i] = 1;</strong><br>
+            <strong>}</strong><br>
+            <em>R: se hace referencia a un elemento que esta fuera de los l&iacute;mites del arreglo, la soluci&oacute;n 
+                seria cambiar el <= por un <</em>
+        </p>
+        <p>
+            <strong>b)</strong><br>
+            <strong>var a = [[1, 2], [3, 4]];</strong><br>
+            <strong>a[1, 1] = 5;</strong><br>
+            <em>R: el indexado esta de manera incorrecta, debria ser a[1][1] = 5;</em>
+        </p>
+    </body>
+</html>

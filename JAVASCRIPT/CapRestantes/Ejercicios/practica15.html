@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.15</title>
+        <meta charset="UTF-8">
+        <script>
+            var posicionX = 0; 
+            var posicionY = 0;
+            var dibujar = 0;
+            var direccion = 0; //0 = abajo, 1 = derecha, 2 = arriba y 3 = izquierda
+            var piso = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+            
+            
+            function iniciar(){
+                var boton = document.getElementById("botonEjecutar");
+                boton.addEventListener("click", comando, false);
+                var boton2 = document.getElementById("botonImprimir");
+                boton2.addEventListener("click", imprimirPiso, false);
+                var boton3 = document.getElementById("botonReiniciar");
+                boton3.addEventListener("click", reiniciar, false);
+            }
+
+            function comando(){
+                var c = document.getElementById("comando").value;
+                var com = parseInt(c);
+                switch(com){
+                    case 1: 
+                        dibujar = 0;
+                        break;
+                    case 2: 
+                        dibujar = 1;
+                        break;
+                    case 3: 
+                        var d = "derecha";
+                        cambiarDireccion(d);
+                        console.log("Girar derecha");
+                        break;
+                    case 4: 
+                        var i = "izquierda";
+                        cambiarDireccion(i);
+                        console.log("Girar izquierda");
+                        break;
+                    case 5: 
+                        var x = window.prompt("Ingrese los espacios a avanzar: ", "0");
+                        var espacios = parseInt(x);
+                        dibujarPiso(espacios);
+                        break;
+                    default: 
+                        console.log("ERROR");
+                        break;
+                }
+            }
+
+            function cambiarDireccion(direc){
+                if(direc=="derecha"){
+                    switch(direccion){
+                        case 0: 
+                            direccion = 1;
+                            break;
+                        case 1: 
+                            direccion = 2;
+                            break;
+                        case 2: 
+                            direccion = 3;
+                            break;
+                        case 3: 
+                            direccion = 0;
+                            break;
+                    } 
+                } else if(direc=="izquierda"){
+                    switch(direccion){
+                        case 0: 
+                            direccion = 3;
+                            break;
+                        case 1: 
+                            direccion = 0;
+                            break;
+                        case 2: 
+                            direccion = 1;
+                            break;
+                        case 3: 
+                            direccion = 2;
+                            break;
+                    } 
+                }
+            }
+
+            function dibujarPiso( espacios ){
+                switch(direccion){
+                    case 0: 
+                        if(posicionX < 0){
+                            posicionX = 0;
+                        } else if(posicionX > 19){
+                            posicionX = 19;
+                        }
+                        if( dibujar == 0 ){
+                            posicionY += espacios;
+                            console.log(posicionY);
+                        }else{
+                            console.log(posicionY)
+                            for ( var i = posicionY; i < (posicionY + espacios); ++i){
+                                if(i >=0 && i <= 19){
+                                    piso[i][posicionX] = 1;
+                                }
+                                if(i<0){
+                                    posicionY = 0;
+                                }
+                                if(i>19){
+                                    posicionY = 19;
+                                }
+                            }
+                            posicionY += espacios;
+                        }
+                        break;
+                    case 1:
+                        if(posicionY < 0){
+                            posicionY = 0;
+                        } else if(posicionY > 19){
+                            posicionY = 19;
+                        }
+                        var c = espacios;
+                        if( dibujar == 0 ){
+                            posicionX -= espacios;
+                            console.log(posicionX);
+                        }else{
+                            for ( var i = posicionX; i < (posicionX - espacios); --i){
+                                if(i >=0 && i <= 19){
+                                    piso[posicionY][i] = 1;
+                                }
+                                if(i<0){
+                                    posicionX = 0;
+                                }
+                                if(i>19){
+                                    posicionX = 19;
+                                }
+                            }
+                            posicionX -= espacios;
+                        }
+                        console.log(posicionX)
+                        break;
+                    case 2: 
+                        if(posicionX < 0){
+                            posicionX = 0;
+                        } else if(posicionX > 19){
+                            posicionX = 19;
+                        }
+                        var c = espacios;
+                        if( dibujar == 0 ){
+                            posicionY -= espacios;
+                            console.log(posicionY);
+                        }else{
+                            for ( var i = posicionY; i < (posicionY - espacios); --i){
+                                if(i >=0 && i <= 19){
+                                    piso[i][posicionX] = 1;
+                                }
+                                if(i<0){
+                                    posicionY = 0;
+                                }
+                                if(i>19){
+                                    posicionY = 19;
+                                }
+                            }
+                            posicionY -= espacios;
+                        }
+                        break;
+                    case 3: 
+                        if(posicionY < 0){
+                            posicionY = 0;
+                        } else if(posicionY > 19){
+                            posicionY = 19;
+                        }
+                        var c = espacios;
+                        if( dibujar == 0 ){
+                            posicionX += espacios;
+                            console.log(posicionX);
+                        }else{
+                            for ( var i = posicionX; i < (posicionX + espacios); ++i){
+                                if(i >=0 && i <= 19){
+                                    piso[posicionY][i] = 1;
+                                } 
+                                if(i<0){
+                                    posicionX = 0;
+                                }
+                                if(i>19){
+                                    posicionX = 19;
+                                }
+                            }
+                            posicionX += espacios;
+                        }
+                        break;
+                }
+                
+            }
+
+            function imprimirPiso(){
+                var contenido = "<p>"
+                for (var i in piso){
+                    for (var j in piso[i]){
+                        if(piso[i][j] == 1){
+                            contenido += " * ";
+                        }else{
+                            contenido += " - ";
+                        }
+                    }
+                    contenido += "<br>";
+                }
+                contenido += "</p>";
+                document.getElementById("piso").innerHTML = contenido;
+            }
+
+            function reiniciar(){
+                posicionX = 0; 
+                posicionY = 0;
+                dibujar = 0;
+                direccion = 0; //0 = abajo, 1 = derecha, 2 = arriba y 3 = izquierda
+                piso = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Use un arreglo de 20 por 20 llamado piso que esté inicializado en ceros. Lea los comandos de un arreglo que los
+            contenga. Rastree la posición actual de la torturga en todo momento y si la pluma está arriba o abajo en un momento
+            dado. Suponga que la tortuga simpre empieza en la posición (0,0) del piso, con su pluma arriba. El conjunto de
+            comandos de tortuga que deberá de procesar su secuencia es la siguiente:</h3>
+        <img src="/javascript2/practicas/secuencia.png" alt="secuencia">
+        <hr>
+        <form action="#">
+            <p>
+                <label>Comando:
+                    <input type="number" id="comando">
+                </label>
+            </p>
+            <input type="button" value="Ejecutar" id="botonEjecutar">
+            <input type="button" value="Imprimir" id="botonImprimir">
+            <input type="button" value="Reiniciar" id="botonReiniciar">
+        </form>
+        <div id="piso"></div>
+    </body>
+</html>

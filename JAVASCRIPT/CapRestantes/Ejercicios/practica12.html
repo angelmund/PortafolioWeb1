@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.12</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Use un arreglo unidimensional para resolver el siguiente problema: recibir 10 números de entrada, cada uno de los cuales
+            debe estar entre 10 y 100. A medidad que se ingrese cada número, imprímalo sólo si no es un duplicado de un número que
+            se haya recibido de entrada. Prepárese para el "peor caso", en donde los 10 números sean diferentes. Use el arreglo más
+            pequeño posible para resolver este problema.</h3>
+        <hr>
+        <div id="resultado">
+            <script>
+                var numeros = new Array();
+                var cont = 1;
+                var contenido = " ";
+    
+                while(cont <= 10){
+                    var num = window.prompt("Ingrese un número entre el 10 y 100: ", "0");
+                    var n = parseInt(num);
+                    if ( numeros == null ){
+                        numeros[0] = n;
+                        cont++;
+                    }else{
+                        var elemento = numeros.indexOf(n);
+                        if(elemento == -1){
+                            var indice = numeros.length;
+                            numeros[indice] = n;
+                            cont++;
+                        }
+                    }
+                }
+    
+                contenido += "Numeros introducidos: ";
+                for( var i in numeros){
+                    contenido += numeros[i] + ", ";
+                }
+    
+                document.getElementById("resultado").innerHTML = contenido;
+            </script>
+        </div>
+    </body>
+</html>

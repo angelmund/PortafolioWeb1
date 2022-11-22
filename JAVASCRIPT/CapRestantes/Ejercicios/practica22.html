@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.5</title>
+        <script>
+            var contenido = ""
+            function iniciar(){
+                var x = window.prompt("Ingrese un número: ", "0");
+                var num = parseFloat(x);
+                redondearAEntero(num);
+                redondearADecimas(num);
+                redondearACentesimas(num);
+                redondearAMilesimas(num);
+                document.getElementById("resultados").innerHTML = contenido;
+            }
+
+            function redondearAEntero( x ){
+                var y = Math.round( x + .5);
+                contenido += "<p>El entero más cercano es: " + y + "</p>";
+            }
+
+            function redondearADecimas( x ){
+                var y = Math.round( x * 10 + .5) /10;
+                contenido += "<p>La decima más cercana es: " + y + "</p>";
+            }
+
+            function redondearACentesimas( x ){
+                var y = Math.round( x * 100 + .5) /100;
+                contenido += "<p>La centesima más cercana es: " + y + "</p>";
+            }
+            
+            function redondearAMilesimas( x ){
+                var y = Math.round( x * 1000 + .5) /1000;
+                contenido += "<p>La milesima más cercana es: " + y + "</p>";
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>11.5 Modifique la solución al ejercicio 11.4 para usar el método round de Math en vez del método 
+            floor.</h3>
+        <hr>
+        <div id="resultados"></div>
+    </body>
+</html>

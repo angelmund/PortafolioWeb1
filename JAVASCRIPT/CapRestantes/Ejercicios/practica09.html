@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.9</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            em{
+                color: blue;
+            }
+            #ind{
+                padding-left: 2em;
+            }
+            #ind2{
+                padding-left: 4em;
+            }
+            #ind3{
+                padding-left: 6em;
+            }
+        </style>
+    </head>
+    <body>
+       <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Consdiere un arreglo de dos por tres que almacena enteros</h3>
+        <p>
+            <strong>a) Escriba una instrucci&oacute;n para declarar y crear el arreglo t</strong><br>
+            <em>R: var t = new Array(new Array(2), new Array(3));</em>
+        </p>
+        <p>
+            <strong>b) ¿Cu&aacute;ntas filas tiene t?</strong><br>
+            <em>R: 2 filas</em>
+        </p>
+        <p>
+            <strong>c) ¿Cu&aacute;ntas columnas tiene t?</strong><br>
+            <em>R: 3 columnas</em>
+        </p>
+        <p>
+            <strong>d) ¿Cu&aacute;ntos elementos tiene t?</strong><br>
+            <em>R: t[2][3] - 6 elementos</em>
+        </p>
+        <p>
+            <strong>e) Escriba los nombres de todos los elementos en la fila 1 de t</strong><br>
+            <em>R: t[0][0], t[0][1], t[0][2]</em>
+        </p>
+        <p>
+            <strong>f) Escriba los nombres de todos los elementos en la tercera columna de t</strong><br>
+            <em>R: t[0][2], t[1][2]</em>
+        </p>
+        <p>
+            <strong>g) Escriba una sola instrucci&oacute;n para establecer el elemento de t en la fila 1 y la columna 2 en cero</strong><br>
+            <em>R: t[0][1] = 0;</em>
+        </p>
+        <p>
+            <strong>h) Escriba una serie de instrucciones para inicializar cada elemento de t en cero</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < 1; ++i){</em><br>
+            <em id="ind">for (var j = 0; j < 2; ++j){</em><br>
+            <em id="ind2">t[i][j] = 0;</em><br>
+            <em id="ind">}</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>i) Escriba una instrucci&oacute;n for anidada para inicializar cada elemento de t en cero</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < 1; ++i){</em><br>
+            <em id="ind">for (var j = 0; j < 2; ++j){</em><br>
+            <em id="ind2">t[i][j] = 0;</em><br>
+            <em id="ind">}</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>j) Escriba una serie de instrucciones para determinar e imprimir el valor m&aacute;s pequeño en el arreglo t</strong><br>
+            <em>R:</em><br>
+            <em>for (var i = 0; i < 1; ++i){</em><br>
+            <em id="ind">for (var j = 0; j < 2; ++j){</em><br>
+            <em id="ind2">if (t[i][j] < menor){</em><br>
+            <em id="ind3">menor = t[i][j];</em><br>
+            <em id="ind2">}</em><br>
+            <em id="ind">}</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>k) Escriba una instrucci&oacute;n sin repetoci&oacute;n para mostrar los elementos de la primera fila de t</strong><br>
+            <em>document.writeln(t[0][0], t[0][1], t[0][2]);</em>
+        </p>
+        <p>
+            <strong>l) Escriba una serie de instrucciones para imprimir el arreglo t en um formato tabular ordenado. Liste los
+                &iacute;ndices de columnas como encabezados a lo largo de la parte superios y liste los &iacute;ndices de fila 
+                en la parte izquierda de cada fila</strong><br>
+            <em>R:</em><br>
+            <em>var t = [[2, 2], [2, 2, 2]];</em><br>
+            <em>function tabla(){</em><br>
+            <em id="ind">var resultados = "&lt;table>&lt;thead>" +</em><br>
+            <em id="ind">"&lt;th>#&lt;/th>&lt;th>0,0&lt;/th>&lt;th>0,1&lt;/th>" +</em><br>
+            <em id="ind">"&lt;th>0,2&lt;/th>&lt;/thead>&lt;tbody>";</em><br>
+            <em id="ind">for (var i = 0; i < 1; ++i){</em><br>
+            <em id="ind2">for (var j = 0; j < 2; ++j){</em><br>
+            <em id="ind3">resultados += "&lt;tr>&lt;td>" + "0" + i + "&lt;/td>&lt;td>" + t[i][j] +</em><br>
+            <em id="ind3">"&lt;/td>&lt;td>" + t[i][j] + "&lt;/td>&lt;td>" + t[i][j] +"&lt;/tr>";</em><br>
+            <em id="ind2">}</em><br>
+            <em id="ind">}</em><br>
+            <em id="ind">resultados += "</tbody></table>";</em><br>
+            <em id="ind">document.getElementById("div").innerHTML = resultados;</em><br>
+            <em>}</em>
+        </p>
+    </body>
+</html>

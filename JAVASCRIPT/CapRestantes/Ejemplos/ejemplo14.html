@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!-- Fig. 11.17: BusquedasFavoritasTwitter.html -->
+<!-- Aplicación Web de búsquedas favoritas de twitter. -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>B&uacute;squeda favoritas de Twitter</title>
+        <style>
+            p{
+                margin: 0px;
+            }
+            #mensajeBienvenida{
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            input[type = "text"]{
+                width: 250px;
+            }
+
+            /* estilos de elementos de lista */
+            span{
+                margin-left: 10px;
+                display: inline-block;
+                width: 100px;
+            }
+            li{
+                list-style-type: none;
+                width: 200px;
+            }
+            li:first-child{
+                border-top: 1px solid grey;
+            }
+            li:nth-child(even){
+                background-color: lightyellow;
+                border-bottom: 1px solid grey;
+            }
+            li:nth-child(odd){
+                background-color: lightblue;
+                border-bottom: 1px solid grey;
+            }
+        </style>
+        <!--link rel="stylesheet" type="text/css" href="estilo.css"-->
+        <script src="/JAVASCRIPT/CapRestantes/Ejemplos/BusquedasFavoritasTwitter.js"></script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h1>B&uacute;squeda favoritas de Twitter</h1>
+        <p id="mensajeBienvenida"></p>
+        <form action="#">
+            <p>
+                <input type="text" id="consulta" placeholder="Introduzca la consulta de búsqueda de Twitter">
+                <a href="https://dev.twitter.com/docs/using-search">Operadores de búsqueda de Twitter</a>
+            </p>
+            <p>
+                <input type="text" id="etiqueta" placeholder="Etiquete su consulta">
+                <input type="button" value="Guardar" id="botonGuardar">
+                <input type="button" value="Borrar todas las búsquedas guardadas" id="botonBorrar">
+            </p>
+            <h1>B&uacute;squedas etiquetadas previamente</h1>
+            <div id="busquedas"></div>
+        </form>
+    </body>
+</html>

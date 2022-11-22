@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.4</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            em{
+                color: blue;
+            }
+            #ind{
+                padding-left: 2em;
+            }
+            #ind2{
+                padding-left: 4em;
+            }
+        </style>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba instrucciones de JavaScript (con respecto al arreglo tabla) para realizar cada una de las siguientes tareas:</h3>
+        <p>
+            <strong>a) Declarar y crear el arreglo con tres filas y tres columnas</strong><br>
+            <em>R: var tabla = new Array(new Array(3), new Array(3), new Array(3));,</em>
+        </p>
+        <p>
+            <strong>b) Almacenar el n&uacute;mero total de elementos en la variable totalElementos</strong><br>
+            <em>R: var totalElementos = tabla.length * tabla[0].length;</em>
+        </p>
+        <p>
+            <strong>c) Usar una instrucci&oacute;n for..in para inicializar cada elemento del arreglo con la suma de sus &iacute;ndices 
+                de fila y de columna. Suponga qyue las variables x y y se declaran como variables de control</strong><br>
+            <em>R:</em><br>
+            <em>for (var x in tabla){</em><br>
+            <em id="ind">for (var y in tabla[x]){</em><br>
+            <em id="ind2">tabla[x][y] = x + y;</em><br>
+            <em id="ind">}</em><br>
+            <em>}</em>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 10.11</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            em{
+                color: blue;
+            }
+            #ind{
+                padding-left: 2em;
+            }
+            #ind2{
+                padding-left: 4em;
+            }
+            #ind3{
+                padding-left: 6em;
+            }
+        </style>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba instrucciones que realizen las siguientes operaciones para un arreglo unidimensional</h3>
+        <p>
+            <strong>a) Establecer los 10 elementos del arreglo cuentas en ceros</strong><br>
+            <em>R: var cuenta = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];</em>
+        </p>
+        <p>
+            <strong>b) Sumar 1 a cada uno de los 15 elementos del arreglo bono</strong><br>
+            <em>R:</em><br>
+            <em>for (var elemento in bono){</em><br>
+            <em id="ind">bono[elemento] += 1;</em><br>
+            <em>}</em>
+        </p>
+        <p>
+            <strong>c) Mostrar los cinco valores del arreglo mejoresPuntuaciones, separado por espacios</strong><br>
+            <em>R: document.writeln(mejoresPuntuaciones[0] + " " + mejoresPuntuaciones[1] + " " +
+                mejoresPuntuaciones[2] + " " + mejoresPuntuaciones[3] + " " mejoresPuntuaciones[4]);</em>
+        </p>
+    </body>
+</html>

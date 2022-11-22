@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.11</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonConvertir");
+                boton.addEventListener("click", convertir, false);
+            }
+
+            function convertir(){
+                var enun = document.getElementById("texto").value;
+                var tokens = enun.split(" ");
+                var contenido = "";
+                for(var i = tokens.length - 1; i >= 0; --i){
+                    contenido += tokens[i] + " ";
+                }
+                document.getElementById("resultado").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que reciba como entrada una línea de texto, que divida la línea en 
+            tokens mediante el método split de String y que muestre los tokens en orden inverso.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Enunciado:
+                    <input type="text" id="texto">
+                </label>
+            </p>
+            <input type="button" value="Convertir" id="botonConvertir">
+        </form>
+        <p id="resultado"></p>
+    </body>
+</html>

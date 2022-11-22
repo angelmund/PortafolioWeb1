@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.12</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonConvertir");
+                boton.addEventListener("click", convertir, false);
+            }
+
+            function convertir(){
+                var enun = document.getElementById("cadena").value;
+                var may = enun.toUpperCase();
+                var min = enun.toLowerCase();
+
+                document.getElementById("mayusculas").innerHTML = may;
+                document.getElementById("minusculas").innerHTML = min;
+            }
+            
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>11.12 Escriba una secuencia de comandos que reciba texto de un formulario de HTML5 y lo imprima 
+            tanto en mayúsculas como en minúsculas.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Enunciado: 
+                    <input type="text" id="cadena">
+                </label>
+            </p>
+            <input type="button" value="Convertir" id="botonConvertir">
+        </form>
+        <p id="mayusculas"></p>
+        <p id="minusculas"></p>
+    </body>
+</html>

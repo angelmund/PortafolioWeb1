@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.18</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonIniciar");
+                boton.addEventListener("click", convertir, false);
+            }
+
+            function convertir(){
+                var contenido = ""
+                for(var i = 0; i < 256; ++i){
+                    contenido += "Codigo: " + i + " - Caracter: " + String.fromCharCode(i) + "\n";
+                }
+                document.getElementById("resultados").innerHTML = contenido;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Modifique su solución al ejercicio 11.17 de manera que genere todos los posibles códigos de tres 
+            dígitos en el rango de 000 a 255, y que intente imprimir los caracteres correspondiente. Muestre los 
+            resultados en un elemento textarea de HMTL5.
+        </h3>
+        <hr>
+        <p>
+            <input type="button" value="Iniciar" id="botonIniciar">
+        </p>
+        <textarea id="resultados" cols="50" rows="20"></textarea>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.13</title>
+        <script>
+            function iniciar(){
+                var boton = document.getElementById("botonBuscar");
+                boton.addEventListener("click", buscar, false);
+            }
+
+            function buscar(){
+                var total = 0;
+                var texto = document.getElementById("texto").value;
+                var tokens = texto.split(" ");
+                console.log(tokens.toString());
+                var bus = document.getElementById("busqueda").value;
+                for(var i = 0; i < tokens.length; ++i){
+                    var ocurrencias = tokens[i].indexOf(bus);
+                    if(ocurrencias != -1){
+                        total++;
+                    }
+                }
+
+                document.getElementById("resultado").innerHTML = "El número de ocurrencias es: " + total;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos que reciba como entrada varias líneas de texto y un carácter de 
+            búsqueda, y que utilice el método String indexOf par determinar el número de ocurrencias de ese 
+            carácter en el texto.
+        </h3>
+        <hr>
+        <form action="#">
+            <p>
+                <label>Caracter de búsqueda:
+                    <input type="text" id="busqueda">
+                </label>
+            </p>
+            <textarea id="texto" cols="80" rows="20"></textarea>
+            <p>
+                <input type="button" value="Buscar" id="botonBuscar">
+            </p>
+        </form>
+        <p id="resultado"></p>
+    </body>
+</html>

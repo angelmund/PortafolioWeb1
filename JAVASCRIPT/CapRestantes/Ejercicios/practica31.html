@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Practica 11.14</title>
+        <script>
+            var alfa = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            function iniciar(){
+                var boton = document.getElementById("botonBuscar");
+                boton.addEventListener("click", buscar, false);
+            }
+
+            function buscar(){
+                var contenido = ""
+                for(var i = 0; i < 27; ++i){
+                    switch(i){
+                        case 0:
+                            alfa[i] = ocurrencias("a");
+                            contenido += "a = " + alfa[i] + "\n";
+                            break;
+                        case 1:
+                            alfa[i] = ocurrencias("b");
+                            contenido += "b = " + alfa[i] + "\n";
+                            break;
+                        case 2:
+                            alfa[i] = ocurrencias("c");
+                            contenido += "c = " + alfa[i] + "\n";
+                            break;
+                        case 3:
+                            alfa[i] = ocurrencias("d");
+                            contenido += "d = " + alfa[i] + "\n";
+                            break;
+                        case 4:
+                            alfa[i] = ocurrencias("e");
+                            contenido += "e = " + alfa[i] + "\n";
+                            break;
+                        case 5:
+                            alfa[i] = ocurrencias("f");
+                            contenido += "f = " + alfa[i] + "\n";
+                            break;
+                        case 6:
+                            alfa[i] = ocurrencias("g");
+                            contenido += "g = " + alfa[i] + "\n";
+                            break;
+                        case 7:
+                            alfa[i] = ocurrencias("h");
+                            contenido += "h = " + alfa[i] + "\n";
+                            break;
+                        case 8:
+                            alfa[i] = ocurrencias("i");
+                            contenido += "i = " + alfa[i] + "\n";
+                            break;
+                        case 9:
+                            alfa[i] = ocurrencias("j");
+                            contenido += "g = " + alfa[i] + "\n";
+                            break;
+                        case 10:
+                            alfa[i] = ocurrencias("k");
+                            contenido += "k = " + alfa[i] + "\n";
+                            break;
+                        case 11:
+                            alfa[i] = ocurrencias("l");
+                            contenido += "l = " + alfa[i] + "\n";
+                            break;
+                        case 12:
+                            alfa[i] = ocurrencias("m");
+                            contenido += "m = " + alfa[i] + "\n";
+                            break;
+                        case 13:
+                            alfa[i] = ocurrencias("n");
+                            contenido += "n = " + alfa[i] + "\n";
+                            break;
+                        case 14:
+                            alfa[i] = ocurrencias("ñ");
+                            contenido += "ñ = " + alfa[i] + "\n";
+                            break;
+                        case 15:
+                            alfa[i] = ocurrencias("o");
+                            contenido += "o = " + alfa[i] + "\n";
+                            break;
+                        case 16:
+                            alfa[i] = ocurrencias("p");
+                            contenido += "p = " + alfa[i] + "\n";
+                            break;
+                        case 17:
+                            alfa[i] = ocurrencias("q");
+                            contenido += "q = " + alfa[i] + "\n";
+                            break;
+                        case 18:
+                            alfa[i] = ocurrencias("r");
+                            contenido += "r = " + alfa[i] + "\n";
+                            break;
+                        case 19:
+                            alfa[i] = ocurrencias("s");
+                            contenido += "s = " + alfa[i] + "\n";
+                            break;
+                        case 20:
+                            alfa[i] = ocurrencias("t");
+                            contenido += "t = " + alfa[i] + "\n";
+                            break;
+                        case 21:
+                            alfa[i] = ocurrencias("u");
+                            contenido += "u = " + alfa[i] + "\n";
+                            break;
+                        case 22:
+                            alfa[i] = ocurrencias("v");
+                            contenido += "v = " + alfa[i] + "\n";
+                            break;
+                        case 23:
+                            alfa[i] = ocurrencias("w");
+                            contenido += "w = " + alfa[i] + "\n";
+                            break;
+                        case 24:
+                            alfa[i] = ocurrencias("x");
+                            contenido += "x = " + alfa[i] + "\n";
+                            break;
+                        case 25:
+                            alfa[i] = ocurrencias("y");
+                            contenido += "y = " + alfa[i] + "\n";
+                            break;
+                        case 26:
+                            alfa[i] = ocurrencias("z");
+                            contenido += "z = " + alfa[i] + "\n";
+                            break;
+                    }
+                }
+
+                document.getElementById("resultado").innerHTML = contenido;
+            }
+
+            function ocurrencias( x ){
+                var total = 0;
+                var texto = document.getElementById("texto").value;
+                var tokens = texto.split(" ");
+                for(var i = 0; i < tokens.length; ++i){
+                    var ocurrencias = tokens[i].toLowerCase().indexOf(x);
+                    if(ocurrencias != -1){
+                        total++;
+                    }
+                }
+                console.log(total)
+                return total;
+            }
+
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
+    <body>
+        <button><a href="/JAVASCRIPT/index.html">Volver</a></button> 
+        <h3>Escriba una secuencia de comandos con base en el programa del ejercicio 11.13 que reciba como entrada varias líneas
+            de texto y utilice el método String indexOf para determinar el número total de ocurrencias de cada letra del
+            alfabeto en ese texto.
+        </h3>
+        <p></p>
+        <hr>
+        <p>
+            <input type="button" value="Buscar" id="botonBuscar">
+        </p>
+        <textarea id="texto" cols="80" rows="20"></textarea>
+        <p>Ocurrencias:</p>
+        <textarea id="resultado" cols="80" rows="20"></textarea>
+    </body>
+</html>

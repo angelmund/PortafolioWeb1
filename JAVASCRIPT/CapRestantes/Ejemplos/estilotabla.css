@@ -1,0 +1,20 @@
+/*ejemplo 10.3*/
+
+table{
+    width: 300px;
+    border-collapse: collapse;
+    background-color: lightblue;
+}
+
+table, td, th{
+    border: 1px solid black;
+    padding: 4px;
+}
+th{
+    text-align: left;
+    color: white;
+    background-color: darkblue;
+}
+tr.addrow{
+    background-color: white;
+}
